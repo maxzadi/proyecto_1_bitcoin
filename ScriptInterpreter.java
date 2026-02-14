@@ -1,4 +1,3 @@
-import java.nio.charset.StandardCharsets;
 
 public class ScriptInterpreter {
 
@@ -16,18 +15,75 @@ public class ScriptInterpreter {
 
             switch (token) {
 
-                // ===== LITERALES NUMÉRICOS =====
-                case "0":
+                // ===== OP_0 =====
+
+                case "OP_0":
                     stack.push(new byte[]{0});
                     break;
-                case "1":
+
+                // ===== OP_1 a OP_16 =====
+                case "OP_1":
                     stack.push(new byte[]{1});
                     break;
-                case "2":
+
+                case "OP_2":
                     stack.push(new byte[]{2});
                     break;
-                case "3":
+
+                case "OP_3":
                     stack.push(new byte[]{3});
+                    break;
+
+                case "OP_4":
+                    stack.push(new byte[]{4});
+                    break;
+
+                case "OP_5":
+                    stack.push(new byte[]{5});
+                    break;
+
+                case "OP_6":
+                    stack.push(new byte[]{6});
+                    break;
+
+                case "OP_7":
+                    stack.push(new byte[]{7});
+                    break;
+
+                case "OP_8":
+                    stack.push(new byte[]{8});
+                    break;
+
+                case "OP_9":
+                    stack.push(new byte[]{9});
+                    break;
+
+                case "OP_10":
+                    stack.push(new byte[]{10});
+                    break;
+
+                case "OP_11":
+                    stack.push(new byte[]{11});
+                    break;
+
+                case "OP_12":
+                    stack.push(new byte[]{12});
+                    break;
+
+                case "OP_13":
+                    stack.push(new byte[]{13});
+                    break;
+
+                case "OP_14":
+                    stack.push(new byte[]{14});
+                    break;
+
+                case "OP_15":
+                    stack.push(new byte[]{15});
+                    break;
+                    
+                case "OP_16":
+                    stack.push(new byte[]{16});
                     break;
 
                 // ===== OPERACIONES DE PILA =====

@@ -13,15 +13,15 @@ public class Main {
             boolean result = interpreter.execute(script, true);
 
             if (result) {
-                System.out.println("Script válido ✅");
+                System.out.println("Script valido ✅");
             } else {
-                System.out.println("Script inválido ❌");
+                System.out.println("Script invalido ❌");
             }
 
         } catch (ScriptException e) {
             System.out.println("Error: " + e.getMessage());
         }
 
-        System.out.println("=== Fin de ejecución ===");
+        System.out.println("=== Fin de ejecucion ===");
     }
 }
