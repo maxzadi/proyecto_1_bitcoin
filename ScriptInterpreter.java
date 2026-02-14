@@ -1,3 +1,4 @@
+import java.nio.charset.StandardCharsets;
 
 public class ScriptInterpreter {
 
@@ -11,7 +12,9 @@ public class ScriptInterpreter {
 
         String[] tokens = script.split(" ");
 
-        for (String token : tokens) {
+        for (int i = 0; i < tokens.length; i++) {
+
+            String token = tokens[i];
 
             switch (token) {
 
@@ -81,9 +84,19 @@ public class ScriptInterpreter {
                 case "OP_15":
                     stack.push(new byte[]{15});
                     break;
-                    
+
                 case "OP_16":
                     stack.push(new byte[]{16});
+                    break;
+
+                case "PUSHDATA":
+
+                    if (i + 1 >= tokens.length) {
+                        throw new ScriptException("PUSHDATA requiere un dato");
+                    }
+
+                    String data = tokens[++i];
+                    stack.push(data.getBytes(StandardCharsets.UTF_8));
                     break;
 
                 // ===== OPERACIONES DE PILA =====
